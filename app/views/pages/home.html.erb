@@ -1,7 +1,9 @@
 <div class="jumbotron center">
 	<h1>Mending.Me</h1>
 	<% if user_signed_in? %>
-		<p> Welcome Menders! </p>
+		<div class="jumbotron white">
+			<%= link_to "Latest Pins", pins_path, class: "btn btn-primary btn-lg" %>
+		</div>
 	<% else %>
 		<p>
 			<%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>

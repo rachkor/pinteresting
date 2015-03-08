@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', pins_path %>
+<%= link_to pins_path do%>
+	<span class="glyphicon glyphicon-arrow-left"></span>
+<% end %> 
 
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
@@ -13,8 +15,12 @@
 				<p><%= @pin.user.username if @pin.user%></p>
 
 				<% if @pin.user == current_user %>
-  					<%= link_to 'Edit', edit_pin_path(@pin) %> 
-  					<%= link_to 'Delete', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+  					<%= link_to edit_pin_path(@pin) do %> 
+  						<span class="glyphicon glyphicon-edit"></span>
+  					<% end %> 
+  					<%= link_to @pin, method: :delete, data: { confirm: 'Are you sure you want to delete this pin?' } do %>
+  						<span class="glyphicon glyphicon-trash"></span>
+  					<% end %> 
 				<% end %>
 			</div>
 		</div>

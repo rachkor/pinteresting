@@ -19,10 +19,10 @@
         <%= link_to pin_path(pin) do %>
           <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
         <% end %>
-        <% if pin.user == current_user %>
+        <% if current_user && pin.user == current_user %>
           <%= link_to edit_pin_path(pin) do %>
             <span class="glyphicon glyphicon-edit"></span>
-          <% end %>ß
+          <% end %>
           <%= link_to pin, method: :delete, data: { confirm: 'Are you sure you want to delete this pin?' } do %>
             <span class="glyphicon glyphicon-trash"></span>
           <% end %>

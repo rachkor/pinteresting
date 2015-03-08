@@ -15,7 +15,7 @@
         <p><strong><%= pin.description %></strong></p>
         <p><%= pin.user.username if pin.user %></p>
         <%= link_to pin_path(pin) do %>
-          <span class="glyphicon glyphicon-resize-full"></span>
+          <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
         <% end %>
         <% if pin.user == current_user %>
           <%= link_to edit_pin_path(pin) do %>

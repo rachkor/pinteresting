@@ -6,7 +6,7 @@ $navbar-default-bg: 			#34495e;
 $navbar-default-link-color: 	white;
 $btn-primary-bg: 				#34495e;
 
-
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 
 .center {
